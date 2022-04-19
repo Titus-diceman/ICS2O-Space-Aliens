@@ -1,9 +1,10 @@
+/* global Phaser */
+
 // Created by: Titus diceman
 // Created on: April 2022
 // This file contains the JS functions for index.html
 
-/* global Phaser */
-
+//* Game Scene */
 const config = {
   type: Phaser.AUTO,
   width: 1920,
@@ -14,7 +15,13 @@ const config = {
       debug: true
     }
   },
-  backgroundColor: 0x5f6e7a
+  // set background color
+  backgroundColor: 0x5f6e7a,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    // we place it in the middle o the page.
+    aotuCenter: Phaser.Scale.CENTER_BOTH
+  }
 }
 
 const game = new Phaser.Game(config)
