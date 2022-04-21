@@ -2,7 +2,7 @@
 
 // Created by: Titus diceman
 // Created on: April 2022
-// This file contains the JS functions for index.html
+// This is the Splash Scene
 
 class SplashScene extends Phaser.Scene {
   constuctor () {
