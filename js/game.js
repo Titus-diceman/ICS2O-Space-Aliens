@@ -30,7 +30,6 @@ const config = {
 }
 
 const game = new Phaser.Game(config)
-console.log(game)
 
 // load secnes 
 // NOTE: remeber any "key" is global and CAN NOT be reused
