@@ -4,6 +4,11 @@
 // Created on: April 2022
 // This file contains the JS functions for index.html
 
+import SplashScene from './splashScene.js'
+
+// our game scene
+const slpashScene = new SplashScene()
+
 //* Game Scene */
 const config = {
   type: Phaser.AUTO,
@@ -26,3 +31,10 @@ const config = {
 
 const game = new Phaser.Game(config)
 console.log(game)
+
+// load secnes 
+// NOTE: remeber any "key" is global and CAN NOT be reused
+game.secne.add('slpashScene', slpashScene)
+
+// start title
+game.scene.start('slpashScene')
