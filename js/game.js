@@ -1,28 +1,27 @@
 /* global Phaser */
 
-// Created by: Titus diceman
-// Created on: April 2022
-// This is the Phaser3 game configuration file
+// Created by: Titus diceman 
+// Created on: May 2022
+// This is the Phaser3 configuration file
 
-// scene import statements
-import SplashScene from "./splashScene.js"
-import TitleScene from "./titleScene.js"
-import MenuScene from "./menuScene.js"
+import SplashScene from './splashScene.js'
+import TitleScene from './titleScene.js'
+import MenuScene from './menuScene.js'
+import GameScene from './gameScene.js'
 
-// create the new scenes
+// Our game scenes
 const splashScene = new SplashScene()
 const titleScene = new TitleScene()
 const menuScene = new MenuScene()
+const gameScene = new GameScene()
 
-/**
- * Start Phaser Game.
- */
+/** Game scene.*/
 const config = {
   type: Phaser.AUTO,
   width: 1920,
   height: 1080,
   physics: {
-    default: "arcade",
+    default: 'arcade',
     arcade: {
       debug: true,
     },
@@ -40,10 +39,11 @@ const game = new Phaser.Game(config)
 // console.log(game)
 
 // load scenes
-// Note: remember any "key" is global and CAN NOT be reused!
-game.scene.add("splashScene", splashScene)
-game.scene.add("titleScene", titleScene)
-game.scene.add("menuScene", menuScene)
-// the start scene
-game.scene.start("splashScene")
+// Note: remember any 'key' is global and CAN NOT be reused!
+game.scene.add('splashScene', splashScene)
+game.scene.add('titleScene', titleScene)
+game.scene.add('menuScene', menuScene)
+game.scene.add('gameScene', gameScene)
 
+// the start scene
+game.scene.start('splashScene')
