@@ -1,10 +1,13 @@
 /* global Phaser */
 
+// Copyright (c) 2022 Titus diceman All rights reserved  
+//
 // Created By: Titus diceman
 // Created on: May 2022
 // This is the Game Scene
 
 class GameScene extends Phaser.Scene {
+  
   constructor() {
     super({ key: 'gameScene' })
 
@@ -24,6 +27,8 @@ class GameScene extends Phaser.Scene {
     this.load.image('starBackground', 'assets/starBackground.png')
     this.load.image('ship', 'assets/spaceShip.png')
     this.load.image('missile', 'assets/missile.png')
+    // sound
+    this.load.audio('laser', "assets/laser1.wav")
   }
 
   create(data) {
@@ -63,12 +68,20 @@ class GameScene extends Phaser.Scene {
         this.fireMissile = true
         const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, 'missile')
         this.missileGroup.add(aNewMissile)
+        this.sound.play('laser')
       }
     }
 
     if (keySpaceObj.isUp === true) {
       this.fireMissile = false
     }
+
+    this.missileGroup.children.each(function (item) {
+      item.y = item.y - 15
+      if (item.y < 0) {
+        item.destroy()
+      }
+    })
   }
 }
 
