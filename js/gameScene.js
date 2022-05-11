@@ -7,12 +7,13 @@
 // This is the Game Scene
 
 class GameScene extends Phaser.Scene {
+ 
   // create an alien
   createAlien () {
-    const alienXLocation = Math.floor(Math.random() * 1920) + 1 
-    let alienXVelocity = Math.floor(Math.random() * 50) + 1
+    const alienXLocation = Math.floor(Math.random() * 1920) + 1 //spawns the alien between 1 and 1921 pixel
+    let alienXVelocity = Math.floor(Math.random() * 50) + 1 // random speed of the alien
     alienXVelocity *= Math.round(Math.random()) ? 1 : -1
-    const anAlien = this.physics.add.sprite(alienXLocation, -100, 'alien')
+    const anAlien = this.physics.add.sprite(alienXLocation, -100, "alien")
     anAlien.body.velocity.y = 200
     anAlien.body.velocity.x = alienXVelocity
     this.alienGroup.add(anAlien)
@@ -52,7 +53,7 @@ class GameScene extends Phaser.Scene {
     this.missileGroup = this.physics.add.group()
 
     // create a group for the aliens
-    this.aliesGroup = this.add.group()
+    this.alienGroup = this.add.group()
     this.createAlien()
   }
 
