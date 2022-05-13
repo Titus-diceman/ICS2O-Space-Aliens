@@ -13,7 +13,7 @@ class MenuScene extends Phaser.Scene {
  }
 
  init(data) {
-   this.cameras.main.setBackgroundColor('#ffffff')
+   this.cameras.main.setBackgroundColor('#005c54')
  }
 
  preload() {
